@@ -1,0 +1,19 @@
+{
+  "name": "suppot-bank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Support Bank.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabricioMelo7/Suppot-Bank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabricioMelo7/Suppot-Bank/issues"
+  },
+  "homepage": "https://github.com/FabricioMelo7/Suppot-Bank#readme"
+}
