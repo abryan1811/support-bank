@@ -2,7 +2,8 @@
   "name": "suppot-bank",
   "version": "1.0.0",
   "description": "",
-  "main": "Support Bank.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/FabricioMelo7/Suppot-Bank#readme",
   "dependencies": {
+    "csv-parser": "^3.0.0",
+    "luxon": "^3.0.4",
     "readline-sync": "^1.4.10"
   }
 }
