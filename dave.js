@@ -1,6 +1,7 @@
 
 import { readFileSync } from 'fs';
 import csvParseSync from 'csv-parse/lib/sync';
+import csv from "./node_modules/csv-parser"
 import moment from 'moment';
 import Transaction from './transaction';
 
@@ -14,8 +15,10 @@ function parseRecordToTransaction(record) {
     );
 }
 
+filepath='files/Transactions2014.csv'
+
 export default function getTransactions(filePath, encoding) {
     const data = readFileSync(filePath, {encoding});
-    return csvParseSync(data, {columns: true}).map(parseRecordToTransaction);
+    return csv(data, {columns: true}).map(parseRecordToTransaction);
 }
 
