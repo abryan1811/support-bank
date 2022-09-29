@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/FabricioMelo7/Suppot-Bank/issues"
   },
-  "homepage": "https://github.com/FabricioMelo7/Suppot-Bank#readme"
+  "homepage": "https://github.com/FabricioMelo7/Suppot-Bank#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
