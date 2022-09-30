@@ -1,10 +1,15 @@
 //let readlineSync = require('readline-sync');
-import Person from "./transactionInfo.js"
+import Transactions from "./transactionInfo.js"
 import fs from "fs"
 import { readFileSync } from 'fs';
 import csv from "csv-parser"
 import moment from 'moment';
 import {generate, parse, transform, stringify} from 'csv';
+
+function displayWelcome(){
+    console.log("Welcome to SupportBank!");
+    console.log("-----------------------");
+}
 
 /*
 const results = [];
@@ -34,7 +39,7 @@ console.log(results);
 */
 
 function parseRecordToTransaction(record) {
-    return new Person(
+    return new Transations(
         moment(record.Date, 'DD/MM/YYYY'),
         record.From,
         record.To,
@@ -51,21 +56,34 @@ export default function getTransactions(filePath, encoding) {
     //console.log(data);
 
     const dataArr = data.split("\n");
+    
+    
 
     //dataArr.splice(0, 1);
         
     for (let i = 1; i < dataArr.length; i++) {
-        console.log(dataArr[i]);
+       
+    const dataItemArr = dataArr[i].split(',');
+
+    let date = dataItemArr[0];
+    let from = dataItemArr[1];
+    let to = dataItemArr[2];
+    let narrative = dataItemArr[3];
+    let amount = dataItemArr[4];
+
+    console.log(date + ': ' + from + ' to pay ' + to +  ' a total of ' + '£' + amount + ' - reason: ' + narrative);
     };
 
+      
+   
     //const parser = parse();
 
     //const dataret = csv(data, {columns: true}).map(parseRecordToTransaction);
 
-    return false;
-   
 }
 
-console.log(getTransactions('./files/Transactions2014.csv', 'utf-8'));
+displayWelcome();
+
+(getTransactions('./files/Transactions2014.csv', 'utf-8'));
 
 // 

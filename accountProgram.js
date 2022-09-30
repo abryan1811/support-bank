@@ -1,5 +1,12 @@
-import Person from "./transactionInfo.js"
+export default class Account {
+    constructor(owner) {
+        this.owner = owner
+        this.incomingTransactions = [];
+        this.outgoingTransactions = [];
+    }
 
-let newPerson = new Person(Date.now, "New", 22, "for reasons");
+    addIncomingTransaction(transaction) {
+        this.incomingTransactions.push(transaction);
+    }
 
-console.log(newPerson.fullName + " has £" + newPerson.balance + " in their account.");
+}
