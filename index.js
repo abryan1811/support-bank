@@ -4,6 +4,7 @@ import fs from "fs"
 import { readFileSync } from 'fs';
 import csv from "csv-parser"
 import moment from 'moment';
+import {generate, parse, transform, stringify} from 'csv';
 
 /*
 const results = [];
@@ -43,11 +44,28 @@ function parseRecordToTransaction(record) {
 }
 
 export default function getTransactions(filePath, encoding) {
+    
     const data = readFileSync(filePath, {encoding});
-    return csv(data, {columns: true}).map(parseRecordToTransaction);
+    //return csv(data, {columns: true}).map(parseRecordToTransaction);
+
+    //console.log(data);
+
+    const dataArr = data.split("\n");
+
+    //dataArr.splice(0, 1);
+        
+    for (let i = 1; i < dataArr.length; i++) {
+        console.log(dataArr[i]);
+    };
+
+    //const parser = parse();
+
+    //const dataret = csv(data, {columns: true}).map(parseRecordToTransaction);
+
+    return false;
    
 }
 
-console.log(getTransactions('files/Transactions2014.csv', 'utf-8'));
+console.log(getTransactions('./files/Transactions2014.csv', 'utf-8'));
 
 // 
